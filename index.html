@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naked F7elan</title>
+    <title>Sorry</title>
     <style>
         body {
             margin: 0;
@@ -11,7 +11,7 @@
             background: url('https://i.pinimg.com/originals/51/ae/a3/51aea3393b8234a1e69d8713a0a58bc3.gif') no-repeat center center fixed;
             background-size: cover;
             font-family: 'Courier New', Courier, monospace;
-            color: #0000ff;
+            color: #00ff00;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -22,35 +22,48 @@
         .image-container img {
             width: 750px; 
             height: auto;
-            border: 2px solid #0000ff; 
+            border: 2px solid #00ff00; 
             border-radius: 15px;
             box-shadow: 0 0 15px rgba(0, 0, 255, 0.7); 
         }
         .info {
             margin-top: 20px;
             font-size: 1.5em;
-            color: #0000ff; 
-            text-shadow: 0px 0px 8px #0000ff, 0px 0px 15px #0000ff, 0px 0px 25px #0000ff; 
+            color: #00ff00; 
+            text-shadow: 0px 0px 8px #00ff00, 0px 0px 15px #00ff00, 0px 0px 25px #00ff00; 
             letter-spacing: 4.5px; 
             white-space: pre-wrap;
         }
         .text {
             margin-top: 20px;
             font-size: 3em; 
-            color: #0000ff; 
-            text-shadow: 0px 0px 8px #0000ff, 0px 0px 15px #0000ff, 0px 0px 25px #0000ff; 
+            color: #00ff00; 
+            text-shadow: 0px 0px 8px #00ff00, 0px 0px 15px #00ff00, 0px 0px 25px #00ff00; 
             letter-spacing: 4.5px; 
+        }
+        @media (max-width: 768px) {
+            .image-container img {
+                width: 90%;
+            }
+            .text {
+                font-size: 1.5em;
+            }
+            .info {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
 <body>
     <div class="image-container">
-        <img src="https://media.discordapp.net/attachments/956985723800678440/1386227352391913582/6b2738b9c98abd810561daa32d228e64.png?ex=69234e93&is=6921fd13&hm=f36c0ca3e28c59c32ef37de621993cfd95b514c85a4a8fb4b3c23a6222b39bfd&=&format=webp&quality=lossless" alt="Discord Image">
+        <img src="https://cdn.discordapp.com/attachments/1434511543109681289/1442240682801496164/download_3.jpg?ex=6924b6ce&is=6923654e&hm=40acb19e6247fd54c6954bb55396618a218e669cd04eb0268d9deec4bb287c13&" alt="Discord Image">
     </div>
+    
     <audio autoplay loop>
         <source src="https://github.com/Mtokyo/trigger1/raw/refs/heads/main/night.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
+    
     <div class="info" id="ip-info">
         <strong>IP: <span id="ip"></span></strong><br>
         <span><strong>City:</strong> <span id="city"></span></span><br>
@@ -60,16 +73,34 @@
         <span><strong>Organization:</strong> <span id="org"></span></span><br>
         <span><strong>Timezone:</strong> <span id="timezone"></span></span>
     </div>
-    <div class="text">Server Nk7 By F7elan</div>
-
+    
+    <div class="text">افضل سيرفر في فايف ام و متواضع جدا عطوني فلوس</div>
+    
     <script>
-         fetch('https://ipinfo.io/json')
-        .then(response => response.json())
-        .then(data => {
-            delete data.readme;
-            const infoDiv = document.getElementById('ip-info');
-            infoDiv.textContent = JSON.stringify(data, null, 2);
+        // تشغيل الصوت تلقائياً بمجرد أي تفاعل مع الصفحة
+        const audio = document.querySelector('audio');
+        
+        function tryPlayAudio() {
+            audio.play().catch(e => console.log('انتظار تفاعل المستخدم...'));
+        }
+        
+
+        tryPlayAudio();
+        
+  
+        ['click', 'touchstart', 'keydown', 'mousemove'].forEach(event => {
+            document.addEventListener(event, () => {
+                audio.play();
+            }, { once: true });
         });
+        
+        fetch('https://ipinfo.io/json')
+            .then(response => response.json())
+            .then(data => {
+                delete data.readme;
+                const infoDiv = document.getElementById('ip-info');
+                infoDiv.textContent = JSON.stringify(data, null, 2);
+            });
     </script>
 </body>
 </html>
