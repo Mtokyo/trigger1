@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sorry</title>
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cairo:wght@700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --green: #00ff41;
@@ -19,7 +19,7 @@
         body {
             background: url('https://i.pinimg.com/originals/51/ae/a3/51aea3393b8234a1e69d8713a0a58bc3.gif') no-repeat center center fixed;
             background-size: cover;
-            font-family: 'Share Tech Mono', monospace;
+            font-family: 'Cairo', 'Orbitron', Arial, sans-serif;
             color: #fff;
             min-height: 100vh;
             display: flex;
@@ -155,13 +155,27 @@
         .signature {
             position: relative;
             z-index: 2;
-            font-family: 'Share Tech Mono', 'Arial', monospace;
+            font-family: 'Cairo', 'Orbitron', Arial, sans-serif;
             font-weight: 900;
             font-size: clamp(1.5em, 5vw, 2.5em);
-            letter-spacing: 12px;
+            letter-spacing: 10px;
             color: #fff;
             text-shadow: 0 0 18px #fff, 0 0 38px #fff, 0 0 60px #fff, 0 0 100px #fff;
             animation: flicker 6s infinite;
+        }
+
+        .af7 {
+            position: relative;
+            z-index: 2;
+            margin-top: 10px;
+            font-family: 'Bebas Neue', 'Orbitron', 'Cairo', Arial, sans-serif;
+            font-weight: 900;
+            font-size: clamp(1.5em, 5vw, 2.7em);
+            letter-spacing: 10px;
+            color: var(--green);
+            text-shadow: 0 0 18px var(--green), 0 0 38px #00ff41, 0 0 60px #00ff41, 0 0 100px #00ff41;
+            text-align: center;
+            user-select: text;
         }
         @keyframes flicker {
             0%,19%,21%,23%,25%,54%,56%,100%{opacity:1}
@@ -197,9 +211,9 @@
         </div>
     </div>
 
-    <div class="signature">اصبر خلني افهمك 
-    Af7
-    </div>
+
+    <div class="signature">اصبر خلني افهمك </div>
+    <div class="af7">AF7</div>
 
     <script>
         const audio = document.querySelector('audio');
